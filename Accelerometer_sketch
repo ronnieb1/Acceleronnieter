@@ -1,0 +1,35 @@
+/*
+ Read X, Y, Z signals from ADXL355 accelarator.
+ x = A3 pin
+ y = A4 pin
+ z = A5 pin
+ */
+
+// the setup routine runs once when you press reset:
+void setup() {
+  // initialize serial communication at 9600 bits per second:
+  Serial.begin(9600);
+}
+
+// the loop routine runs over and over again forever:
+void loop() {
+  
+  // read the input on analog pin 0:
+  int val_x = analogRead(A3);
+  int val_y = analogRead(A4);
+  int val_z = analogRead(A5);
+  
+  // print out the value:
+  Serial.print("X value is: ");
+  Serial.println(val_x);
+  Serial.print("Y value is: ");
+  Serial.println(val_y);
+  Serial.print("Z value is: ");
+  Serial.println(val_z);
+  
+  // print space between readings
+  Serial.println(" ");
+  
+  //delay
+   delay(1000);        
+}
